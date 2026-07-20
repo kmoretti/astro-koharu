@@ -1,7 +1,9 @@
 ---
 import HomeSider from '@components/layout/HomeSider.astro';
 import PostList from '@components/post/PostList.astro';
+import TalkTicker from '@components/shuoshuo/TalkTicker';
 import Cover from '@components/ui/cover/Cover.astro';
+import { shuoshuoConfig } from '@constants/friends-config';
 import { CONTENT_PADDING, PAGINATION } from '@constants/layout';
 import { seoConfig, siteConfig } from '@constants/site-config';
 import Layout from '@layouts/Layout.astro';
@@ -49,6 +51,8 @@ const page: Page<BlogPost> = {
 };
 ---
 
+<link rel="stylesheet" href="/css/shuoshuo.css">
+
 <Layout title={seoConfig.title}>
   <TwoColumnLayout>
     <Cover slot="cover" />
@@ -56,6 +60,7 @@ const page: Page<BlogPost> = {
     <div
       class={`bg-gradient-start shadow-box tablet:shadow-none flex flex-col gap-4 overflow-hidden  ${CONTENT_PADDING.standard}`}
     >
+      <TalkTicker apiUrl={shuoshuoConfig.apiUrl} client:load />
       {stickyPosts.length > 0 && (
         <>
           <Divider>{t(locale, 'post.stickyPosts')}</Divider>

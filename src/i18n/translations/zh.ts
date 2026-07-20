@@ -17,6 +17,7 @@ export const uiStrings = {
   'nav.music': '歌单',
   'nav.weekly': '周刊',
   'nav.bangumi': '追番',
+  'nav.shuoshuo': '说说',
   'nav.fcircle': '朋友圈',
 
   // ── Common ──────────────────────────────────────────────────

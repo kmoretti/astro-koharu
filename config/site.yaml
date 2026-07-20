@@ -263,6 +263,16 @@ fcircle:
   allJsonUrl: "https://fc.081531.xyz/all.json"
 
 # =============================================================================
+# Shuoshuo (Qexo Talks) Configuration
+# 说说配置 - 展示日常动态
+# =============================================================================
+shuoshuo:
+  apiUrl: "https://qexo.2005815.xyz"  # Qexo 实例地址
+  pageSize: 20                           # 每页说说数量
+  avatar: "/img/avatar.webp"             # 说说头像
+  author: "cos"                          # 说说作者名
+
+# =============================================================================
 # Announcements
 # 公告系统 - 在页面顶部显示重要通知
 # =============================================================================
@@ -423,6 +433,10 @@ navigation:
     nameKey: nav.fcircle
     path: /fcircle
     icon: ri:rss-fill
+  - name: 说说
+    nameKey: nav.shuoshuo
+    path: /shuoshuo
+    icon: ri:message-2-fill
 
 # =============================================================================
 # Christmas/Seasonal Features

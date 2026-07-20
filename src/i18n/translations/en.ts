@@ -19,6 +19,7 @@ export const uiStrings: UIStrings = {
   'nav.weekly': 'Weekly',
   'nav.bangumi': 'Bangumi',
   'nav.fcircle': 'Circle',
+  'nav.shuoshuo': 'Moments',
 
   // ── Common ──────────────────────────────────────────────────
   'common.search': 'Search',

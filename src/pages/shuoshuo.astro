@@ -1,0 +1,35 @@
+---
+import HomeSider from '@components/layout/HomeSider.astro';
+import ShuoShuo from '@components/shuoshuo/ShuoShuo';
+import Cover from '@components/ui/cover/Cover.astro';
+import { shuoshuoConfig } from '@constants/friends-config';
+import { CONTENT_PADDING } from '@constants/layout';
+import { siteConfig } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
+
+const title = `说说 | ${siteConfig.title}`;
+const description = '说说 - 日常动态';
+---
+
+<link rel="stylesheet" href="/css/shuoshuo.css">
+
+<Layout title={title} description={description}>
+  <TwoColumnLayout>
+    <Cover slot="cover" title="说说" />
+    <HomeSider slot="sider" />
+    <div
+      class={`bg-gradient-start shadow-box tablet:shadow-none flex flex-col gap-10 overflow-hidden ${CONTENT_PADDING.standard}`}
+    >
+      <div class="mt-4">
+        <ShuoShuo
+          apiUrl={shuoshuoConfig.apiUrl}
+          pageSize={shuoshuoConfig.pageSize ?? 20}
+          avatar={shuoshuoConfig.avatar ?? '/img/avatar.webp'}
+          author={shuoshuoConfig.author ?? 'cos'}
+          client:load
+        />
+      </div>
+    </div>
+  </TwoColumnLayout>
+</Layout>

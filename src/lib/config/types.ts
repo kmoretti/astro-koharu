@@ -146,6 +146,21 @@ export interface FcircleConfig {
 }
 
 // =============================================================================
+// Shuoshuo (Qexo Talks) Configuration
+// =============================================================================
+
+export interface ShuoshuoConfig {
+  /** Qexo 实例地址 */
+  apiUrl: string;
+  /** 每页说说数量 @default 20 */
+  pageSize?: number;
+  /** 说说头像 URL */
+  avatar?: string;
+  /** 说说作者名 */
+  author?: string;
+}
+
+// =============================================================================
 // Announcements
 // =============================================================================
 
@@ -620,6 +635,7 @@ export interface SiteYamlConfig {
   social?: SocialConfig;
   friends?: FriendsConfig;
   fcircle?: FcircleConfig;
+  shuoshuo?: ShuoshuoConfig;
   announcements?: AnnouncementConfig[];
   defaultCoverList?: string[];
   content?: ContentConfig;

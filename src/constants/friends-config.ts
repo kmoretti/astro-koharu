@@ -1,4 +1,4 @@
-import type { FcircleConfig, FriendLink, FriendsConfig, FriendsIntro } from '@lib/config/types';
+import type { FcircleConfig, FriendLink, FriendsConfig, FriendsIntro, ShuoshuoConfig } from '@lib/config/types';
 import yamlConfig from '../../config/site.yaml';
 
 // Re-export type for backwards compatibility
@@ -26,4 +26,11 @@ export const friendsIntro: FriendsIntro = friendsConfig.intro;
 
 export const fcircleConfig: FcircleConfig = {
   allJsonUrl: yamlConfig.fcircle?.allJsonUrl ?? 'https://fc.081531.xyz/all.json',
+};
+
+export const shuoshuoConfig: ShuoshuoConfig = {
+  apiUrl: yamlConfig.shuoshuo?.apiUrl ?? 'https://qexo.2005815.xyz',
+  pageSize: yamlConfig.shuoshuo?.pageSize ?? 20,
+  avatar: yamlConfig.shuoshuo?.avatar ?? '/img/avatar.webp',
+  author: yamlConfig.shuoshuo?.author ?? 'cos',
 };

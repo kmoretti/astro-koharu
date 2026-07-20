@@ -1,0 +1,356 @@
+/* ============== SHUOSHUO (MOMENTS) PAGE ============== */
+/* Liushen-style card design + waterfall layout        */
+/* ====================================================== */
+
+.shuoshuo-page {
+  padding-bottom: 64px;
+}
+
+/* ---- State Messages ---- */
+
+.shuo-state {
+  margin: 18px 0 8px;
+  padding: 14px 16px;
+  border: 1px dashed var(--dash);
+  border-radius: 8px;
+  background: var(--paper-warm);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+.shuo-state.is-error {
+  color: #b35a4a;
+  border-color: rgba(179, 90, 74, 0.34);
+}
+.dark .shuo-state.is-error {
+  color: #e39a8b;
+  border-color: rgba(227, 154, 139, 0.32);
+}
+
+/* ---- Waterfall Container ---- */
+
+.shuo-waterfall {
+  position: relative;
+  width: 100%;
+}
+
+/* ---- Card ---- */
+
+.shuo-card {
+  position: absolute;
+  width: calc(33.333% - 10px);
+  background: var(--paper);
+  border: 1px dashed var(--dash);
+  border-radius: 12px;
+  box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  transition: box-shadow 0.3s ease, transform 0.22s ease;
+  overflow: hidden;
+}
+.shuo-card:hover {
+  box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+.dark .shuo-card {
+  box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.dark .shuo-card:hover {
+  box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.28);
+}
+
+/* ---- Meta: Avatar + Name + Date ---- */
+
+.shuo-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--dash);
+}
+
+.shuo-avatar-wrap {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.shuo-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.shuo-avatar--text {
+  display: inline-grid;
+  place-items: center;
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.shuo-card__info {
+  min-width: 0;
+  flex: 1;
+}
+
+.shuo-card__author {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #6dbdc3;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.shuo-card__badge {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.shuo-card__date {
+  color: var(--muted);
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 1px;
+}
+
+/* ---- Content ---- */
+
+.talk-content {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink);
+  word-wrap: break-word;
+}
+.talk-content img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 8px;
+  display: block;
+}
+.talk-content a {
+  color: var(--color-accent-strong);
+  text-decoration: underline;
+}
+.talk-content p {
+  margin: 0 0 6px;
+}
+.talk-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Tags ---- */
+
+.shuo-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--dash);
+}
+
+.shuo-card__tag {
+  font-size: 12px;
+  background: var(--paper-warm);
+  border: 1px dashed var(--dash);
+  border-radius: 12px;
+  padding: 2px 10px;
+  color: var(--muted);
+  transition: box-shadow 0.3s ease;
+}
+.shuo-card__tag:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.dark .shuo-card__tag {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ---- Bottom (Like) ---- */
+
+.shuo-card__bottom {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--dash);
+}
+
+.shuo-card__like {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--muted);
+  transition: color 0.2s ease;
+  user-select: none;
+}
+.shuo-card__like:hover {
+  color: #e25555;
+}
+.shuo-card__like.is-liked {
+  color: #e25555;
+}
+.shuo-card__like svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ---- Load More ---- */
+
+.shuo-more {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 132px;
+  margin: 28px auto 0;
+  padding: 8px 18px;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft, var(--muted));
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 1;
+}
+.shuo-more::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--paper-warm, var(--paper));
+  z-index: -1;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--dash);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+.shuo-more:hover {
+  color: var(--color-accent-strong);
+  transform: translateY(-1px);
+}
+.shuo-more:hover::before {
+  background: var(--color-accent-soft);
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+}
+.dark .shuo-more::before {
+  box-shadow: none;
+}
+.shuo-more.is-loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 900px) {
+  .shuo-card {
+    width: calc(50% - 6px);
+  }
+}
+@media (max-width: 600px) {
+  .shuo-card {
+    width: 100%;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    margin-bottom: 12px;
+  }
+  .shuo-waterfall {
+    height: auto !important;
+  }
+}
+
+/* ============== TALK TICKER (Homepage) ============== */
+/* Rolling talk bar between cover and content          */
+/* ====================================================== */
+
+.talk-ticker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 10px 16px;
+  border: 1px dashed var(--dash);
+  border-radius: 10px;
+  background: var(--paper-warm);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  user-select: none;
+  margin-bottom: 4px;
+}
+
+.talk-ticker:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.dark .talk-ticker:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.talk-ticker__icon {
+  flex-shrink: 0;
+  color: var(--color-accent-strong);
+  opacity: 0.8;
+}
+
+.talk-ticker__list {
+  flex: 1;
+  min-width: 0;
+  max-height: 28px;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.talk-ticker__item {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 28px;
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(4px);
+  transition: opacity 0.36s ease, transform 0.36s ease, filter 0.36s ease;
+}
+
+.talk-ticker__item.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.talk-ticker__item.is-leaving {
+  opacity: 0;
+  transform: translateY(-12px);
+  filter: blur(4px);
+}
+
+.talk-ticker__arrow {
+  flex-shrink: 0;
+  color: var(--muted);
+  opacity: 0.5;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.talk-ticker:hover .talk-ticker__arrow {
+  opacity: 0.8;
+  transform: translateX(2px);
+}
