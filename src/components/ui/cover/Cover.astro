@@ -25,7 +25,7 @@ const readState = data ? getPostReadingTime(data) : null;
 const isDraft = import.meta.env.DEV && draft === true;
 
 // 获取横幅图片的 LQIP 样式
-const bannerLqipStyle = getLqipStyle('/img/site_header_1920.webp');
+const bannerLqipStyle = getLqipStyle('https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/bg.webp');
 
 const locale = getLocaleFromUrl(Astro.url.pathname);
 
@@ -108,11 +108,11 @@ const pageStatsConfig = href ? createArticleStatsConfig(href) : null;
     style={bannerLqipStyle}
   >
     <img
-      src="/img/site_header_1920.webp"
+      src="https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/bg.webp"
       alt="cover"
       class="h-full w-full object-cover"
       sizes="50vw"
-      srcset="/img/site_header_800.webp 800w,/img/site_header_1920.webp 1200w"
+      srcset="/img/site_header_800.webp 800w,https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/bg.webp 1200w"
       loading="eager"
       fetchpriority="high"
       decoding="async"

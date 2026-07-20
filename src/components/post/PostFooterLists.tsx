@@ -48,7 +48,7 @@ export default function PostFooterLists({ allPosts, relatedPosts, leftCount, rig
         <div className="flex flex-col gap-2">
           {leftPosts.map((post, index) => (
             <a
-              key={post.slug}
+              key={`${post.slug}-left-${index}`}
               href={localizedPath(`/post/${encodeSlug(post.link ?? post.slug)}`, locale)}
               className="group flex gap-3 rounded-md p-2 text-sm transition-colors duration-300 hover:bg-foreground/5 hover:text-primary"
             >
@@ -73,7 +73,7 @@ export default function PostFooterLists({ allPosts, relatedPosts, leftCount, rig
           <div className={cn('flex flex-col gap-2', { '-mt-4 pt-12 md:-mt-5 md:pt-0': !hasRelatedPosts })}>
             {rightPosts.map((post, index) => (
               <a
-                key={post.slug}
+                key={`${post.slug}-right-${index}`}
                 href={localizedPath(`/post/${encodeSlug(post.link ?? post.slug)}`, locale)}
                 className="group flex gap-3 rounded-md p-2 text-sm transition-colors duration-300 hover:bg-foreground/5 hover:text-primary"
               >
