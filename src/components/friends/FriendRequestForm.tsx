@@ -14,7 +14,7 @@ const FORMAT_YAML = `- site: 你的博客名称 # 站点名称
 
 const FORMAT_MINE = `- site: 喵洛阁 # 站点名称
   url: https://b.081531.xyz/ # 站点网址
-  owner: cos # 昵称
+  owner: 克喵Moretti # 昵称
   desc: 人生如逆旅，我亦是行人。 # 站点简介
   image: https://q2.qlogo.cn/headimg_dl?dst_uin=3149261770&spec=0 # 头像链接
   color: "#FFEE6F" # 主题色
