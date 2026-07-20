@@ -18,6 +18,7 @@ export const uiStrings: UIStrings = {
   'nav.music': '音楽',
   'nav.weekly': '週刊',
   'nav.bangumi': 'オタ活の記録',
+  'nav.fcircle': 'サークル',
 
   // ── 一般 ──────────────────────────────────────────────────
   'common.search': '検索',

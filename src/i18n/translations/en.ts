@@ -18,6 +18,7 @@ export const uiStrings: UIStrings = {
   'nav.music': 'Music',
   'nav.weekly': 'Weekly',
   'nav.bangumi': 'Bangumi',
+  'nav.fcircle': 'Circle',
 
   // ── Common ──────────────────────────────────────────────────
   'common.search': 'Search',

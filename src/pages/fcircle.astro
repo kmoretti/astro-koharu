@@ -1,0 +1,29 @@
+---
+import FriendCircle from '@components/friends/FriendCircle';
+import HomeSider from '@components/layout/HomeSider.astro';
+import Cover from '@components/ui/cover/Cover.astro';
+import { fcircleConfig } from '@constants/friends-config';
+import { CONTENT_PADDING } from '@constants/layout';
+import { siteConfig } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
+
+const title = `朋友圈 | ${siteConfig.title}`;
+const description = '友链朋友圈 - 各友链博客的最新文章动态';
+---
+
+<link rel="stylesheet" href="/css/fcircle.css">
+
+<Layout title={title} description={description}>
+  <TwoColumnLayout>
+    <Cover slot="cover" title="朋友圈" />
+    <HomeSider slot="sider" />
+    <div
+      class={`bg-gradient-start shadow-box tablet:shadow-none flex flex-col gap-10 overflow-hidden ${CONTENT_PADDING.standard}`}
+    >
+      <div class="mt-4">
+        <FriendCircle allJsonUrl={fcircleConfig.allJsonUrl} client:load />
+      </div>
+    </div>
+  </TwoColumnLayout>
+</Layout>

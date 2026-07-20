@@ -103,6 +103,16 @@ export interface FriendLink {
   desc: string;
   image: string;
   color?: string;
+  /** 网站截图 URL（远程数据源） */
+  siteshot?: string;
+  /** RSS 订阅地址 */
+  feeds?: string;
+  /** 站点延迟（秒，如 0.36），来自延迟检测 API */
+  latency?: number;
+  /** 站点是否可达 */
+  reachable?: boolean;
+  /** 最后更新日期 */
+  updated?: string;
 }
 
 export interface FriendsIntro {
@@ -114,8 +124,25 @@ export interface FriendsIntro {
 }
 
 export interface FriendsConfig {
+  /** 数据源选择: "local" | "remote"，默认 local */
+  dataSource?: 'local' | 'remote';
+  /** 远程友链数据 URL（dataSource 为 remote 时使用） */
+  remoteUrl?: string;
+  /** 站点延迟检测 URL（dataSource 为 remote 时使用） */
+  latencyUrl?: string;
+  /** 友链申请 API URL */
+  apiUrl?: string;
   intro: FriendsIntro;
   data: FriendLink[];
+}
+
+// =============================================================================
+// Friend Circle (Friend-Circle-Lite) Configuration
+// =============================================================================
+
+export interface FcircleConfig {
+  /** Friend-Circle-Lite all.json 数据源 URL */
+  allJsonUrl: string;
 }
 
 // =============================================================================
@@ -592,6 +619,7 @@ export interface SiteYamlConfig {
   featuredSeries?: FeaturedSeriesItem[] | FeaturedSeriesItem;
   social?: SocialConfig;
   friends?: FriendsConfig;
+  fcircle?: FcircleConfig;
   announcements?: AnnouncementConfig[];
   defaultCoverList?: string[];
   content?: ContentConfig;

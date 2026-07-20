@@ -11,22 +11,22 @@
 # Site Basic Information
 # =============================================================================
 site:
-  title: 余弦の博客 # 网站名称
-  alternate: cosine # 网站英文名称 用于页脚、Logo、@ handle 等
-  subtitle: WA 的一声就哭了 # 网站副标题
-  name: cos # 作者名称 - 请修改为你的名字
-  description: 一个基于 Astro 的现代化博客主题 # 网站描述
-  avatar: /img/avatar.webp # 网站头像
+  title: 喵洛阁 # 网站名称
+  alternate: KeMiao BLog # 网站英文名称 用于页脚、Logo、@ handle 等
+  subtitle: 克喵的小站 # 网站副标题
+  name: 克喵Moretti # 作者名称 - 请修改为你的名字
+  description: 人生如逆旅，我亦是行人。 # 网站描述
+  avatar: https://q2.qlogo.cn/headimg_dl?dst_uin=3149261770&spec=0 # 网站头像
   showLogo: true # 是否显示 Logo
-  author: Author # 作者名称 - 请修改为你的名字
-  url: https://koharu.cosine.ren # 站点 URL 用于 RSS 和 SEO
-  defaultOgImage: /img/avatar.webp # 默认 Open Graph 图片
+  author: 克喵Moretti # 作者名称 - 请修改为你的名字
+  url: https://b.081531.xyz # 站点 URL 用于 RSS 和 SEO
+  defaultOgImage: https://q2.qlogo.cn/headimg_dl?dst_uin=3149261770&spec=0 # 默认 Open Graph 图片
   startYear: 2024 # 建站年份
   timezone: Asia/Shanghai # 时区配置 (IANA 格式)，用于日期显示和处理
   keywords: # SEO 关键词 (全局)
     - 博客
     - Astro
-    - 技术
+    - 克喵
     - 前端
     # 请根据你的网站内容添加关键词
   # breadcrumbHome: 首页  # 面包屑导航中首页的显示名称（默认: '首页'）
@@ -51,11 +51,11 @@ i18n:
   locales:
     - code: zh
       label: 中文
-    - code: en
-      label: English
+    # - code: en
+    #   label: English
       # enabled: false  # 内容存在但暂时禁用（保留内容但不生成路由）
-    - code: ja
-      label: 日本語
+    # - code: ja
+    #   label: 日本語
 
 # =============================================================================
 # Category Map
@@ -131,7 +131,7 @@ featuredSeries:
       你可以用它来发布定期更新的系列内容，如技术周刊、读书笔记系列等。
       设置 enabled: false 可以关闭此功能。
     cover: /img/weekly_header.webp # 系列页面头图
-    enabled: true # 启用此系列
+    enabled: false # 启用此系列
     icon: ri:newspaper-line # 导航图标
     links: # 相关链接（可选）
       github: https://github.com/your-username/your-repo # (可选) GitHub 仓库
@@ -162,11 +162,11 @@ featuredSeries:
 # -----------------------------------------------------------------------------
 social:
   github:
-    url: https://github.com/your-username # 替换为你的 GitHub 链接
+    url: https://s.081531.xyz/github # 替换为你的 GitHub 链接
     icon: ri:github-fill # Remix Icon 的 GitHub 图标
     color: '#191717' # (可选) 图标颜色
   email:
-    url: mailto:your@email.com # 替换为你的邮箱，需加 mailto: 前缀
+    url: mailto:mcy@kemiaosw.top # 替换为你的邮箱，需加 mailto: 前缀
     icon: ri:mail-line
     color: '#55acd5'
   rss:
@@ -212,6 +212,10 @@ social:
 #   - color: (可选) 卡片背景色，十六进制格式
 # -----------------------------------------------------------------------------
 friends:
+  dataSource: "remote" # 数据源: "local"(本地) | "remote"(远程)
+  remoteUrl: "https://friends-api.081531.xyz/source/_data/links.yml" # 远程友链数据 URL
+  latencyUrl: "https://fc.081531.xyz/link.json" # 站点延迟检测 URL
+  apiUrl: "https://verify.081531.xyz/api/submissions" # 友链申请 API URL
   intro:
     title: 友情链接 # 页面标题
     subtitle: 欢迎交换友链！ # 页面副标题
@@ -251,6 +255,14 @@ friends:
       color: '#ABDCFF'
 
 # =============================================================================
+# Friend Circle (Friend-Circle-Lite) Configuration
+# 友链朋友圈配置 - 展示各友链博客的最新 RSS 文章动态
+# =============================================================================
+fcircle:
+  # Friend-Circle-Lite all.json 数据源 URL
+  allJsonUrl: "https://fc.081531.xyz/all.json"
+
+# =============================================================================
 # Announcements
 # 公告系统 - 在页面顶部显示重要通知
 # =============================================================================
@@ -272,19 +284,19 @@ friends:
 # 取消下方注释即可启用公告示例：
 # -----------------------------------------------------------------------------
 announcements:
-  # - id: welcome-2026 # 唯一标识符
-  #   title: 2026 年新年快乐! # 公告标题
-  #   content: 新年快乐! 感谢大家一直以来的支持~ # 公告内容
-  #   type: success # 类型: info/success/warning/error
-  #   priority: 10 # 优先级，数值越大越靠前
-  #   color: '#FF6B6B' # (可选) 自定义颜色
-  #   publishDate: '2026-01-01' # 发布日期
-  #   startDate: '2025-12-31T00:00:00+08:00' # (可选) 开始显示时间
-  #   endDate: '2026-01-15T23:59:59+08:00' # (可选) 结束显示时间
-  #   link: # (可选) 相关链接
-  #     url: https://example.com
-  #     text: 了解更多
-  #     external: true # 新窗口打开
+  - id: welcome-2026 # 唯一标识符
+    title: 2026 年新年快乐! # 公告标题
+    content: 新年快乐! 感谢大家一直以来的支持~ # 公告内容
+    type: success # 类型: info/success/warning/error
+    priority: 10 # 优先级，数值越大越靠前
+    color: '#FF6B6B' # (可选) 自定义颜色
+    publishDate: '2026-01-01' # 发布日期
+    startDate: '2025-12-31T00:00:00+08:00' # (可选) 开始显示时间
+    endDate: '2026-01-15T23:59:59+08:00' # (可选) 结束显示时间
+    link: # (可选) 相关链接
+      url: https://example.com
+      text: 了解更多
+      external: true # 新窗口打开
   # - id: maintenance-notice
   #   title: 系统维护通知
   #   content: 计划于本周末进行系统维护，届时可能短暂无法访问。
@@ -407,6 +419,10 @@ navigation:
     nameKey: nav.music
     path: /music
     icon: ri:music-2-fill
+  - name: 朋友圈
+    nameKey: nav.fcircle
+    path: /fcircle
+    icon: ri:rss-fill
 
 # =============================================================================
 # Christmas/Seasonal Features
@@ -632,7 +648,7 @@ christmas:
 #   icon: 导航图标，Iconify 格式（可选，默认：ri:bilibili-fill）
 # -----------------------------------------------------------------------------
 bangumi:
-  userId: cosine
+  userId: kemiao
   # label: 追番
   # icon: ri:bilibili-fill
 
@@ -651,18 +667,22 @@ bangumi:
 #     - urlTemplate: URL 模板，支持占位符 {path}（文件绝对路径）
 # -----------------------------------------------------------------------------
 dev:
-  localProjectPath: '/Users/yourname/path/to/astro-koharu' # 请修改为你的项目绝对路径
+  localProjectPath: 'E:\kmoretti-github\astro-koharu\blog' # 请修改为你的项目绝对路径
   contentRelativePath: 'src/content/blog'
   editors:
-    - id: vscode
-      name: VS Code
-      icon: devicon-plain:vscode
-      urlTemplate: 'vscode://file/{path}'
-    - id: cursor
-      name: Cursor
-      icon: simple-icons:cursor
-      urlTemplate: 'cursor://file/{path}'
-    - id: zed
-      name: Zed
-      icon: simple-icons:zedindustries
-      urlTemplate: 'zed://file/{path}'
+    # - id: vscode
+    #   name: VS Code
+    #   icon: devicon-plain:vscode
+    #   urlTemplate: 'vscode://file/{path}'
+    # - id: cursor
+    #   name: Cursor
+    #   icon: simple-icons:cursor
+    #   urlTemplate: 'cursor://file/{path}'
+    # - id: zed
+    #   name: Zed
+    #   icon: simple-icons:zedindustries
+    #   urlTemplate: 'zed://file/{path}'
+    - id: trae
+      name: Trae
+      icon: mdi:code
+      urlTemplate: 'trae://file/{path}'
